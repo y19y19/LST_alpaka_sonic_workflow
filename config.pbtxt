@@ -1,0 +1,160 @@
+name: "LST"
+backend: "LST"
+input [
+  {
+    name: "see_px"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  },
+  {
+    name: "see_py"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  },
+  {
+    name: "see_pz"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  },
+  {
+    name: "see_dxy"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  },
+  {
+    name: "see_dz"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  },
+  {
+    name: "see_ptErr"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  },
+  {
+    name: "see_etaErr"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  },
+  {
+    name: "see_stateTrajGlbX"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  },
+  {
+    name: "see_stateTrajGlbY"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  },
+  {
+    name: "see_stateTrajGlbZ"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  },
+  {
+    name: "see_stateTrajGlbPx"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  },
+  {
+    name: "see_stateTrajGlbPy"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  },
+  {
+    name: "see_stateTrajGlbPz"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  },
+  {
+    name: "see_q"
+    data_type: TYPE_INT32
+    dims: [ -1 ]
+  },
+  {
+    name: "see_hit_size"
+    data_type: TYPE_UINT32
+    dims: [ -1 ] # special, defined as number of hits per seed
+  },
+  {
+    name: "see_hitIdx"
+    data_type: TYPE_INT32
+    dims: [ -1 ] # special, convert std::vector<std::vector<int>> 
+  },
+  {
+    name: "see_hitType"
+    data_type: TYPE_INT32
+    dims: [ -1 ] # special, convert std::vector<std::vector<int>> 
+  },
+  {
+    name: "see_algo"
+    data_type: TYPE_UINT32
+    dims: [ -1 ]
+  },
+  {
+    name: "ph2_detId"
+    data_type: TYPE_UINT32
+    dims: [ -1 ]
+  },
+  {
+    name: "ph2_clustSize"
+    data_type: TYPE_UINT16
+    dims: [ -1 ]
+  },
+  {
+    name: "ph2_x"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  },
+  {
+    name: "ph2_y"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  },
+  {
+    name: "ph2_z"
+    data_type: TYPE_FP32
+    dims: [ -1 ]
+  },
+  {
+    name: "ptCut"
+    data_type: TYPE_FP32
+    dims: [ 1 ]
+  },
+  {
+    name: "clustSizeCut"
+    data_type: TYPE_UINT16
+    dims: [ 1 ]
+  }
+]
+
+output [
+  {
+    name: "nTrackCandidates"
+    data_type: TYPE_UINT32
+    dims: [ 1 ]
+  },
+  {
+    name: "pixelSeedIndex"
+    data_type: TYPE_UINT32
+    dims: [ -1 ]
+  },
+  {
+    name: "trackCandidateType"
+    data_type: TYPE_INT8
+    dims: [ -1 ]
+  },
+  {
+    name: "hitIndices"
+    data_type: TYPE_UINT32
+    dims: [ -1 ]
+  }
+]
+
+instance_group [
+  {
+    count: 1
+    #kind : KIND_CPU
+    kind : KIND_GPU
+  }
+]

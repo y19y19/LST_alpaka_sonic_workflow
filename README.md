@@ -13,6 +13,9 @@ $ cd sonic-workflow
 $ cmsRun TTbar_14TeV_TuneCP5_cfi_GEN_SIM.py # generate root file needed by next cmsRun
 $ cmsRun step2_DIGI_L1TrackTrigger_L1_L1P2GT_DIGI2RAW_HLT_PU.py # generate root file needed by next cmsRun
 
+# Set up server
+# copy config.pbtxt under RecoTracker/LST/data and to server's model. 
+# ...
 # Now it is the LST step that can be modified by SONIC
 # Local CPU -> modify the accelerator as 'cpu' in step3
 # Local CUDA ->  modify the accelerator as 'gpu-nvidia'
