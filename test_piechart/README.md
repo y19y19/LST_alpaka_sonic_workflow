@@ -1,4 +1,4 @@
-# Per-Event Process Timing Pie Chart
+# CMS Event Process Timing Pie Chart
 
 ## Overview
 
